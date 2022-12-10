@@ -1,0 +1,32 @@
+version: '3.8'
+
+networks:
+  cache: # redis
+
+services:
+  web:
+    build:
+      context: .
+      target: development
+    ports:
+      - ${PORT}:${PORT}
+      - 9229:9229
+    command: yarn start:dev
+    volumes:
+      - '.:/root/demo_backend'
+      - '/root/demo_backend/node_modules'
+    networks:
+      - cache
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://demo_backend_cache
+    env_file:
+      - ./.env
+  redis:
+    image: 'redis:alpine'
+    container_name: demo_backend_cache
+    expose:
+      - 6379
+    networks:
+      - cache

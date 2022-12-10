@@ -1,0 +1,14 @@
+.git
+.env
+.keychain
+.aws
+.vscode
+.gitignore
+.editorconfig
+.prettierrc
+.eslintrc.js
+*.log
+scripts
+node_modules
+dist
+coverage
