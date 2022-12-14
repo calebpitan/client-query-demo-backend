@@ -3,3 +3,4 @@ test
 scripts
 .eslintrc.cjs
 *.spec.ts
+loader.js
