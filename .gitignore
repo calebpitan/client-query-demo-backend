@@ -3,7 +3,7 @@
 /node_modules
 
 # secrets
-.env
+*.env
 .keychain
 
 # Logs
