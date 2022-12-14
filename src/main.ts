@@ -1,14 +1,17 @@
+import { Configuration } from '@/utils/config/index.js';
+
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
 import { AppModule } from './app.module.js';
-import { Configuration } from './utils/config/config.js';
+import { Choose } from './utils/types/index.js';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const appConfig = app
     .get<ConfigService<Configuration>>(ConfigService)
-    .get<Configuration['app']>('app')!;
+    .get<Choose<Configuration, 'app'>>('app')!;
 
   const config = new DocumentBuilder()
     .setTitle('Client Query Demo Backend')
