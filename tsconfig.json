@@ -1,4 +1,7 @@
 {
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "node",
@@ -21,7 +24,10 @@
     "strictBindCallApply": true,
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/utils/*": ["src/utils/*"]
+    }
   },
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }
