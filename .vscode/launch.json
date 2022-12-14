@@ -7,8 +7,8 @@
       {
         "type": "node",
         "request": "attach",
-        "name": "Debug Action Solution",
-        "remoteRoot": "/root/action_solution",
+        "name": "Debug Demo Backend",
+        "remoteRoot": "/root/demo_backend",
         "localRoot": "${workspaceFolder}",
         "port": 9229,
         "restart": true,
